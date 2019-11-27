@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+# rubocop: disable Lint/Void 
+
+# rubocop: disable Lint/RedundantWithIndex
+
+# rubocop: disable Style/EvenOdd
+
 require_relative '../lib/enumerables.rb'
 
 array1_test = [1, 2, 3, 4, 5]
@@ -16,7 +22,7 @@ RSpec.describe Enumerable do
       expect(array1_test.my_each).to be_a(Enumerable)
     end
     it 'should return the array' do
-      expect(array1_test.my_each { |x| x }).to eql(array1_test.each { |x| x })
+      expect(array1_test.my_each { |x| x }).to eql(array1_test.each { |x|  x })
     end
     it 'should the block' do
       output1 = []
@@ -190,3 +196,9 @@ RSpec.describe Enumerable do
     end
   end
 end
+
+# rubocop: enable Lint/Void
+
+# rubocop: disable Lint/RedundantWithIndex
+
+# rubocop: disable Style/EvenOdd
